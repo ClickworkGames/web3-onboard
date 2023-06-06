@@ -6,6 +6,7 @@ import {
   Platform,
   Device
 } from '@web3-onboard/common'
+import superb from 'icons/superb'
 
 /**
  * The `ProviderIdentityFlag` is a property on an injected provider
@@ -57,7 +58,8 @@ export enum ProviderIdentityFlag {
   Zerion = 'isZerion',
   Rainbow = 'isRainbow',
   SafePal = 'isSafePal',
-  DeFiWallet = 'isDeficonnectProvider'
+  DeFiWallet = 'isDeficonnectProvider',
+  Superb = "isSuperb"
 }
 
 export enum ProviderLabel {
@@ -105,7 +107,8 @@ export enum ProviderLabel {
   Zerion = 'Zerion',
   Rainbow = 'Rainbow',
   SafePal = 'SafePal',
-  DeFiWallet = 'DeFi Wallet'
+  DeFiWallet = 'DeFi Wallet',
+  Superb = "Superb"
 }
 
 export interface MeetOneProvider extends ExternalProvider {
@@ -135,7 +138,8 @@ export enum InjectedNameSpace {
   OKXWallet = 'okxwallet',
   Trust = 'trustwallet',
   Frontier = 'frontier',
-  DeFiConnectProvider = 'deficonnectProvider'
+  DeFiConnectProvider = 'deficonnectProvider',
+  Superb = "superb"
 }
 
 export interface CustomWindow extends Window {
@@ -170,6 +174,7 @@ export interface CustomWindow extends Window {
   okxwallet: InjectedProvider
   trustwallet: InjectedProvider
   deficonnectProvider: InjectedProvider
+  superb: InjectedProvider
 }
 
 export type InjectedProvider = ExternalProvider &

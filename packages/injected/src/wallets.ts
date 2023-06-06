@@ -715,6 +715,15 @@ const defiwallet: InjectedWalletModule = {
   platforms: ['all'],
 }
 
+const superb: InjectedWalletModule = {
+  label: ProviderLabel.Superb,
+  injectedNamespace: InjectedNameSpace.Superb,
+  checkProviderIdentity: ({ provider }) => !!provider && !!provider[ProviderIdentityFlag.Superb],
+  getIcon: async () => (await import('./icons/superb.js')),
+  getIterface: async () => ({ provider: getInjectedInterface(ProviderIdentityFlag.Superb) }),
+  platforms: ['all']
+}
+
 const wallets = [
   zeal,
   exodus,
@@ -758,7 +767,8 @@ const wallets = [
   zerion,
   rainbow,
   safepal,
-  defiwallet
+  defiwallet,
+  superb
 ]
 
 export default wallets
