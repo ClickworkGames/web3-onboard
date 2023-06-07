@@ -707,20 +707,23 @@ const defiwallet: InjectedWalletModule = {
   label: ProviderLabel.DeFiWallet,
   injectedNamespace: InjectedNameSpace.DeFiConnectProvider,
   checkProviderIdentity: ({ provider }) =>
-        !!provider && !!provider[ProviderIdentityFlag.DeFiWallet],
+    !!provider && !!provider[ProviderIdentityFlag.DeFiWallet],
   getIcon: async () => (await import('./icons/defiwallet.js')).default,
   getInterface: async () => ({
     provider: createEIP1193Provider(window.deficonnectProvider)
   }),
-  platforms: ['all'],
+  platforms: ['all']
 }
 
 const superb: InjectedWalletModule = {
   label: ProviderLabel.Superb,
   injectedNamespace: InjectedNameSpace.Superb,
-  checkProviderIdentity: ({ provider }) => !!provider && !!provider[ProviderIdentityFlag.Superb],
-  getIcon: async () => (await import('./icons/superb.js')),
-  getIterface: async () => ({ provider: getInjectedInterface(ProviderIdentityFlag.Superb) }),
+  checkProviderIdentity: ({ provider }) =>
+    !!provider && !!provider[ProviderIdentityFlag.Superb],
+  getIcon: async () => (await import('./icons/superb.js')).default,
+  getInterface: async () => ({
+    provider: createEIP1193Provider(window.superb)
+  }),
   platforms: ['all']
 }
 
